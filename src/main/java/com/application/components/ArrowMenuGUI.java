@@ -1,5 +1,6 @@
-package com.application.gui;
+package com.application.components;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -14,7 +15,7 @@ public class ArrowMenuGUI extends JPanel {
 
         FlowLayout layout = new FlowLayout();
         this.setLayout(layout);
-        this.add(left, FlowLayout.CENTER);
-        this.add(right, FlowLayout.CENTER);
+        this.add(left);
+        this.add(right);
     }
 }

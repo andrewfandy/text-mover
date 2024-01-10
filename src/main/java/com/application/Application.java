@@ -4,14 +4,13 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import com.application.gui.ArrowMenuGUI;
-import com.application.gui.ColorMenuGUI;
-import com.application.gui.MoveAreaGUI;
+import com.application.components.ArrowMenuGUI;
+import com.application.components.ColorMenuGUI;
+import com.application.components.MoveAreaGUI;
 
 public class Application extends JFrame {
 
     Application() {
-        this.setVisible(true);
 
         this.setSize(420, 240);
         this.setTitle("Text Mover Application");
@@ -36,12 +35,15 @@ public class Application extends JFrame {
 
         // Add Arrows Menu
         ArrowMenuGUI arrows = new ArrowMenuGUI();
-        this.add(arrows, BorderLayout.PAGE_END);
+        this.add(arrows, BorderLayout.SOUTH);
+
+        this.setVisible(true);
 
     }
 
     public static void main(String[] args) {
         new Application();
+        System.out.println(MoveAreaGUI.getTextPosition());
     }
 
 }
