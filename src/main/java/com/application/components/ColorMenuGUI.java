@@ -1,10 +1,14 @@
-package com.application.gui;
+package com.application.components;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+
+import com.application.controller.ColorMenuController;
 
 public class ColorMenuGUI extends JPanel {
 
@@ -32,5 +36,41 @@ public class ColorMenuGUI extends JPanel {
         this.add(orangeBtn);
         this.add(greenBtn);
 
+        redBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ColorMenuController.setColorText(Color.RED);
+            }
+        });
+
+        yellowBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ColorMenuController.setColorText(Color.YELLOW);
+            }
+        });
+
+        blackBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ColorMenuController.setColorText(Color.BLACK);
+            }
+        });
+
+        orangeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ColorMenuController.setColorText(Color.ORANGE);
+            }
+        });
+
+        greenBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                ColorMenuController.setColorText(Color.GREEN);
+            }
+        });
+
     }
+
 }

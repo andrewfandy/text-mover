@@ -11,29 +11,31 @@ import javax.swing.JPanel;
 public class MoveAreaGUI extends JPanel {
 
     private static final String TEXT = "Programming is Fun";
-    private final static JLabel LABEL = new JLabel(TEXT);
-    private final Color DEFAULT_COLOR = new Color(0xFF0000);
+    private static JLabel label;
 
     public MoveAreaGUI() {
-        BorderLayout layout = new BorderLayout();
-        this.setLayout(layout);
-
-        LABEL.setHorizontalAlignment(JLabel.CENTER);
-
-        // Set default color when instantiate this class
-        setColorText(DEFAULT_COLOR);
+        this.setLayout(null);
+        label = new JLabel(TEXT);
+        // label.setHorizontalAlignment(JLabel.CENTER);
+        label.setSize(label.getPreferredSize());
 
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        this.add(LABEL);
+        this.add(label);
 
     }
 
-    public static void setColorText(Color color) {
-        LABEL.setForeground(color);
+    public static JLabel getLabel() {
+        return label;
+    }
+
+    public void centerLabel() {
+        int x = (this.getWidth() - label.getWidth()) / 2;
+        int y = (this.getHeight() - label.getHeight()) / 2;
+        label.setLocation(x, y);
     }
 
     public static Point getTextPosition() {
-        return LABEL.getLocationOnScreen();
+        return label.getLocationOnScreen();
     }
 
 }

@@ -39,11 +39,13 @@ public class Application extends JFrame {
 
         this.setVisible(true);
 
+        // centering label
+        area.centerLabel();
+
     }
 
     public static void main(String[] args) {
         new Application();
-        System.out.println(MoveAreaGUI.getTextPosition());
     }
 
 }
